@@ -1,7 +1,14 @@
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { Button } from "./ui/button";
 
 function Header() {
   return (
@@ -17,17 +24,21 @@ function Header() {
           />
         </Link>
         {/* // its clerk signin and signup button */}
-        <div>
+        <div className="flex items-center space-x-2">
           <SignedOut>
-            <SignInButton />
-            <SignUpButton>
-              <button className=" text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-                Sign Up
-              </button>
-            </SignUpButton>
+            <SignInButton>
+                <Button variant="secondary" className="cursor-pointer" >Sign In</Button>
+            </SignInButton> 
           </SignedOut>
+
           <SignedIn>
-            <UserButton />
+            <UserButton appearance={{
+                elements:{
+                    avatarBox : "w-10 h-10",
+                    userButtonPopoverCard : "shadow-xl",
+                    userPreviewMainIdentifier : "font-semibold",
+                }
+            }} />
           </SignedIn>
         </div>
       </nav>
