@@ -1,3 +1,4 @@
+import Pricing from "@/components/Pricing";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -104,6 +105,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section with green medical styling */}
+      
       <section className="py-20 ">
         <div className="container mx-auto px-10">
           <div className="text-center mb-16">
@@ -124,7 +126,7 @@ export default function Home() {
           </div>
           <div>
             {/* pricing Table */}
-
+            <Pricing/>
             <Card className="mt-12 bg-muted/20 border-emerald-900/30">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-white flex items-center">
